@@ -1,0 +1,149 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    flannel.alpha.coreos.com/backend-data: '{"VNI":1,"VtepMAC":"42:e7:a7:6c:69:0d"}'
+    flannel.alpha.coreos.com/backend-type: vxlan
+    flannel.alpha.coreos.com/kube-subnet-manager: "true"
+    flannel.alpha.coreos.com/public-ip: 192.168.10.66
+    kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/containerd/containerd.sock
+    management.cattle.io/pod-limits: '{"memory":"340Mi"}'
+    management.cattle.io/pod-requests: '{"cpu":"950m","memory":"290Mi","pods":"11"}'
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2023-09-16T22:15:19Z"
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: photon-e84939f196ca
+    kubernetes.io/os: linux
+    node-role.kubernetes.io/control-plane: ""
+    node.kubernetes.io/exclude-from-external-load-balancers: ""
+  name: photon-e84939f196ca
+  resourceVersion: "21027"
+  uid: 9911e6ea-683c-4a2c-9dfc-d94cc8c15376
+spec:
+  podCIDR: 10.244.0.0/24
+  podCIDRs:
+  - 10.244.0.0/24
+status:
+  addresses:
+  - address: 192.168.10.66
+    type: InternalIP
+  - address: photon-e84939f196ca
+    type: Hostname
+  allocatable:
+    cpu: "2"
+    ephemeral-storage: "15103129166"
+    hugepages-2Mi: "0"
+    memory: 3936884Ki
+    pods: "110"
+  capacity:
+    cpu: "2"
+    ephemeral-storage: 16387944Ki
+    hugepages-2Mi: "0"
+    memory: 4039284Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2023-09-17T15:35:37Z"
+    lastTransitionTime: "2023-09-17T15:35:37Z"
+    message: Flannel is running on this node
+    reason: FlannelIsUp
+    status: "False"
+    type: NetworkUnavailable
+  - lastHeartbeatTime: "2023-09-17T15:40:40Z"
+    lastTransitionTime: "2023-09-16T22:15:18Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2023-09-17T15:40:40Z"
+    lastTransitionTime: "2023-09-16T22:15:18Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2023-09-17T15:40:40Z"
+    lastTransitionTime: "2023-09-16T22:15:18Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2023-09-17T15:40:40Z"
+    lastTransitionTime: "2023-09-16T22:26:47Z"
+    message: kubelet is posting ready status. AppArmor enabled
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - docker.io/rancher/rancher-agent@sha256:11505663684b20e9549fde6563974617ac68e889dd278a6acbd39c382073c989
+    - docker.io/rancher/rancher-agent:v2.7.6
+    sizeBytes: 492443054
+  - names:
+    - docker.io/rancher/shell@sha256:bb5078e5052b34801b53894f93f590251341965e75d1d3b603bb8e68238946c4
+    - docker.io/rancher/shell:v0.1.20
+    sizeBytes: 134569609
+  - names:
+    - docker.io/rancher/fleet-agent@sha256:e29b29dba75e9323a8d279350c0a93610c2a70f551d1e2e5256b8b33ce877a0e
+    - docker.io/rancher/fleet-agent:v0.7.1
+    sizeBytes: 114171245
+  - names:
+    - registry.k8s.io/etcd@sha256:e013d0d5e4e25d00c61a7ff839927a1f36479678f11e49502b53a5e0b14f10c3
+    - registry.k8s.io/etcd:3.5.9-0
+    sizeBytes: 102894559
+  - names:
+    - registry.k8s.io/kube-apiserver@sha256:6beea2e5531a0606613594fd3ed92d71bbdcef99dd3237522049a0b32cad736c
+    - registry.k8s.io/kube-apiserver:v1.28.2
+    sizeBytes: 34662976
+  - names:
+    - registry.k8s.io/kube-controller-manager@sha256:6a42ce14d716205a99763f3c732c0a8f0ea041bdbbea7d2dfffcc53dafd7cac4
+    - registry.k8s.io/kube-controller-manager:v1.28.2
+    sizeBytes: 33395782
+  - names:
+    - docker.io/flannel/flannel@sha256:c7214e3ce66191e45b8c2808c703a2a5674751e90f0f65aef0b404db0a22400c
+    - docker.io/flannel/flannel:v0.22.2
+    sizeBytes: 27004177
+  - names:
+    - docker.io/rancher/rancher-webhook@sha256:3dc47051f07399ea7b4095870cb2f673f65d56cd8c880c44b4002abfe0f8ce2b
+    - docker.io/rancher/rancher-webhook:v0.3.5
+    sizeBytes: 25339843
+  - names:
+    - registry.k8s.io/kube-proxy@sha256:41c8f92d1cd571e0e36af431f35c78379f84f5daf5b85d43014a9940d697afcf
+    - registry.k8s.io/kube-proxy:v1.28.2
+    sizeBytes: 24558871
+  - names:
+    - registry.k8s.io/kube-scheduler@sha256:6511193f8114a2f011790619698efe12a8119ed9a17e2e36f4c1c759ccf173ab
+    - registry.k8s.io/kube-scheduler:v1.28.2
+    sizeBytes: 18811134
+  - names:
+    - registry.k8s.io/coredns/coredns@sha256:a0ead06651cf580044aeb0a0feba63591858fb2e43ade8c9dea45a6a89ae7e5e
+    - registry.k8s.io/coredns/coredns:v1.10.1
+    sizeBytes: 16190758
+  - names:
+    - docker.io/flannel/flannel-cni-plugin@sha256:ca6779c6ad63b77af8a00151cefc08578241197b9a6fe144b0e55484bc52b852
+    - docker.io/flannel/flannel-cni-plugin:v1.2.0
+    sizeBytes: 3879095
+  - names:
+    - registry.k8s.io/pause@sha256:7031c1b283388d2c2e09b57badb803c05ebed362dc88d84b480cc47f72a21097
+    - registry.k8s.io/pause:3.9
+    sizeBytes: 321520
+  - names:
+    - k8s.gcr.io/pause@sha256:3d380ca8864549e74af4b29c10f9cb0956236dfb01c40ca076fb6c37253234db
+    - k8s.gcr.io/pause:3.6
+    sizeBytes: 301773
+  nodeInfo:
+    architecture: amd64
+    bootID: 57aea087-a870-4eac-b06d-b126ca25c7dc
+    containerRuntimeVersion: containerd://1.6.8
+    kernelVersion: 4.19.245-1.ph3
+    kubeProxyVersion: v1.28.2
+    kubeletVersion: v1.28.2
+    machineID: 153fe76d6b23475d83985f03a7d62990
+    operatingSystem: linux
+    osImage: VMware Photon OS/Linux
+    systemUUID: f0d5829f-c3b6-2248-886f-26438bdd70f3

@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nsupdate-operator
+  namespace: kube-system
+spec:
+  containers:
+    - name: nsupdate-operator
+      image: localhost:5000/nsupdate-operator:1.0.0
+      imagePullPolicy: Always
+  serviceAccountName: nsupdate-operator
+
+
